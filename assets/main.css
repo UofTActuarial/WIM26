@@ -33,7 +33,7 @@ body{
     font-family:'Roboto',sans-serif;
     font-size:1em;
     line-height:1.5em;
-    margin: 60px auto;
+    margin: 0px auto;
     width: 1000px;
 }
 
@@ -77,15 +77,20 @@ th,td{
 }
 
 /* Website Banner */
-.banner {position: relative; font-family:'Roboto Slab',serif;}
+.banner {position: relative; font-family:'Roboto Slab',serif;} img {
+    width: 100%;
+    display: block; /* Removes any extra space below the image */
+    height: auto; /* Ensures the aspect ratio is maintained */
+}
+
 .top-left {
-    font-size:5.33em; 
+    font-size:4em; 
     color: #505050; 
-    background: #fafafa; 
+    background: transparent; 
     text-align: center; 
     width: 1000px; 
     /* height: 67px; */
-    position: absolute; 
+    /*position: absolute;*/ 
     padding: 36px 0 0 0; 
     top: 0px;
     line-height: 1.1em;

@@ -14,38 +14,7 @@
 
 <body>
 
-    <div class="banner">
-        <img src="assets/banner.jpg" alt="Conference Template Banner">
-        <div class="top-left">
-            <span class="title1">Workshop in</span><br><span class="title2">Insurance Mathematics</span> <span class="year">2026</span>
-        </div>
-        <div class="bottom-right">
-            , 2026 <br> University of Toronto
-        </div>
-    </div>
-
-    <table class="navigation">
-        <tr>
-            <td class="navigation">
-                <a class="current" title="Conference Home Page" href=".">Home</a>
-            </td>
-            <td class="navigation">
-                <a title="Register for the Conference" href="registration">Registration</a>
-            </td>
-            <td class="navigation">
-                <a title="Conference Program" href="program">Program</a> 
-            </td>
-            <td class="navigation">
-                <a title="Directions to the Conference" href="directions">Directions</a>
-            </td>
-            <td class="navigation">
-                <a title="Conference Flyer" href="flyer">Flyer</a>
-            </td>
-            <td class="navigation">
-                <a title="Our Group" href="https://actsci.utstat.utoronto.ca/">Our Group</a>
-            </td>
-        </tr>
-    </table>
+    <div id="banner-placeholder"></div>
 
     <h2>Hello!</h2>
     <p>
@@ -58,16 +27,22 @@
 
     </p>
     <table class="sponsors">
-        <!--
         <tr>
             <td class="sponsor">
-                    <img src="assets/kitten1.jpg" alt="Test">
+                    <img src="assets/UofT_Logo.png" alt="Test">
                 </a>
             </td>
         </tr>
-    -->
     </table>
-
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('banner.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('banner-placeholder').innerHTML = data;
+                });
+        });
+    </script>
 </body>
 </html>
 
