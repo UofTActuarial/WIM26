@@ -155,3 +155,8 @@ footer{font-size:0.875em; margin-top:12em; text-align:center;}
     table.footer{font-size:0.33em;}
 }
 
+/* lists */
+#menu ul, #menu li {
+    margin: 0;
+    padding: 0;
+}
