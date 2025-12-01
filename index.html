@@ -75,37 +75,33 @@
             .then(data => {
                 document.getElementById('banner-placeholder').innerHTML = data;
 
-                // --- UPDATED ACTIVE LINK LOGIC ---
+                // ---------------------------------------------------------
+                // ROBUST ACTIVE LINK LOGIC (Works Locally & Online)
+                // ---------------------------------------------------------
 
-                // 1. Get the current path (e.g. "/program/index.html" or "/program/")
-                let path = window.location.pathname;
-
-                // 2. Remove "index.html" if it's there
-                if (path.endsWith("index.html")) {
-                    path = path.substring(0, path.length - "index.html".length);
+                // 1. Get the current full URL and strip 'index.html' and trailing slash
+                // This standardizes "mysite.com/" and "mysite.com/index.html" to look the same.
+                let currentUrl = window.location.href;
+                currentUrl = currentUrl.replace("index.html", "");
+                if (currentUrl.endsWith("/")) {
+                    currentUrl = currentUrl.slice(0, -1);
                 }
 
-                // 3. Remove trailing slash "/" so we get a clean word
-                if (path.endsWith("/")) {
-                    path = path.substring(0, path.length - 1);
-                }
-
-                // 4. Get the folder name (the last part of the path)
-                let activePage = path.split("/").pop();
-
-                // 5. Handle the Home Page (root folder usually results in empty string)
-                if (activePage === "") {
-                    activePage = ".";
-                }
-
-                // 6. Loop and Match
                 const navLinks = document.querySelectorAll('.nav-container a');
-                
+
                 navLinks.forEach(link => {
-                    let linkHref = link.getAttribute('href');
-                    
-                    // Compare the folder name we found to the link href
-                    if (linkHref === activePage) {
+                    // 2. Get the link's full resolved URL (not just the text inside href="")
+                    // link.href automatically converts "." to "http://mysite.com/"
+                    let linkUrl = link.href;
+
+                    // 3. Clean the link URL exactly the same way
+                    linkUrl = linkUrl.replace("index.html", "");
+                    if (linkUrl.endsWith("/")) {
+                        linkUrl = linkUrl.slice(0, -1);
+                    }
+
+                    // 4. Compare the two "clean" URLs
+                    if (currentUrl === linkUrl) {
                         link.classList.add('current');
                     }
                 });
