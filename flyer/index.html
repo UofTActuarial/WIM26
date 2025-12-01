@@ -3,7 +3,7 @@
 
 <head>
     <base href="..">
-    <link rel="shortcut icon" type="image/png" href="assets/favicon.png"/>
+    <link rel="shortcut icon" type="image/png" href="assets/favicon.webp"/>
     <link rel="stylesheet" type="text/css" media="all" href="assets/main.css"/>
     <meta name="description" content="Conference Template">
     <meta name="resource-type" content="document">
@@ -47,7 +47,7 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            fetch('banner.html')
+            fetch('banner-short.html')
                 .then(response => response.text())
                 .then(data => {
                     document.getElementById('banner-placeholder').innerHTML = data;

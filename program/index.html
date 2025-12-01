@@ -3,7 +3,7 @@
 
 <head>
     <base href="..">
-    <link rel="shortcut icon" type="image/png" href="assets/favicon.png"/>
+    <link rel="shortcut icon" type="image/png" href="assets/favicon.webp"/>
     <link rel="stylesheet" type="text/css" media="all" href="assets/main.css"/>
     <script type="text/javascript" async
         src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=default">
@@ -303,7 +303,7 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            fetch('banner.html')
+            fetch('banner-short.html')
                 .then(response => response.text())
                 .then(data => {
                     document.getElementById('banner-placeholder').innerHTML = data;
