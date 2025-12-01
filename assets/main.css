@@ -42,9 +42,9 @@ a.current{color: #52739e;}
 a.current:hover{color: #e82945;}
 a:hover{color: #b2132e;}
 a:active{color: #e82945;}
-h1,h2,h3,h4{clear:left; color: #813c54; margin:1.5em 0em 1em 0em; font-family:'Roboto Slab',serif; text-shadow: 1px 1px 2px #d0d0d0;}
+h1,h2,h3,h4{clear:left; color: #813c54; margin:0.8em 0em 1em 0em; font-family:'Roboto Slab',serif; text-shadow: 1px 1px 2px #d0d0d0;}
 h1{font-size:2.67em;}
-h2{font-size:2.00em;}
+h2{font-size:2.00em}
 h3{font-size:1.67em;}
 h4{font-size:1.33em;}
 p{list-style:none; margin:24px auto 24px auto; padding:0px; width:900px; text-align:left;}
@@ -153,7 +153,7 @@ table.navigation{width:800px;}
 td.navigation{font-size:1.67em; white-space:nowrap; width:20%; text-align:center; vertical-align:middle; padding:0px 0px 0px 0px;}
 
 .nav-container {
-    padding-top: 15px;
+    padding-top: 17px;
     display: flex;       /* Enables Flexbox */
     justify-content: center; /* Centers the whole group */
     gap: 40px;           /* Puts exactly 40px between every item */
@@ -166,6 +166,10 @@ td.navigation{font-size:1.67em; white-space:nowrap; width:20%; text-align:center
 .nav-container a {
     text-decoration: none;
     white-space: nowrap;
+}
+.nav-container a.current {
+    color: #52739e; /* Yellow to stand out */
+    font-weight: bold; /* Optional: make it thicker */
 }
 
 /* Sponsor Images */
@@ -195,6 +199,20 @@ td.sponsor img{width: 100%}
 
 footer{font-size:0.875em; margin-top:12em; text-align:center;}
 
+/* Text */
+.main-intro {
+    /* 1. Push the text down */
+    /* Calculation: Banner Height (e.g. 300px) + Gap (50px) = 350px */
+    margin-top: 20px; 
+
+    /* 2. Optional: Constrain the width so lines aren't too long to read */
+    margin-left: auto;  /* Centers the block */
+    margin-right: auto; /* Centers the block */
+    
+    /* 3. Optional: Add line-height for readability */
+    line-height: 1.6;
+}
+
 /* My hacky way of making the site mobile-friendly */
 @media only screen and (max-width: 1100px) {
     h2{font-size:3.00em; padding-left:15px; padding-right:15px;}
@@ -204,6 +222,8 @@ footer{font-size:0.875em; margin-top:12em; text-align:center;}
     td.date{font-size:1em; padding-top:0.5em;}
     td.navigation{font-size:1.5em; padding:0px 20px 0px 20px;}
     table.footer{font-size:0.33em;}
+    span{padding-left:15px; padding-right:15px;}
+    nav{padding-left:15px; padding-right:15px;}
 }
 
 /* lists */

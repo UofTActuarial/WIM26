@@ -16,12 +16,11 @@
 <body>
 
     <div id="banner-placeholder"></div>
-
     
-    <span>
+    <div class="main-intro">
     This biennial workshop is the key venue for researchers and scholars in actuarial science and insurance from Ontario and Quebec to come together and discuss and exchange the latest developments in the field. The workshop features talks and a poster session on topic related to actuarial science and its application, as well as the intersection of actuarial science with e.g., statistics, probability, risk management, machine learning, and economics.
     Previous editions were held at <a href="https://wim2024.weebly.com/" style="color:#505050;">Concordia University (2024)</a>, <a href="https://conference.has.uwo.ca/Register/default.aspx?code=C000763" style="color:#505050;">Western University (2020)</a>, Université de Montreal (2018), University of Waterloo (2016), <a href="https://www.act.ulaval.ca/fileadmin/act/documents/PDF/Workshop/Affiche_11x17_billingues_impression2.pdf" style="color:#505050;">Université Laval (2014)</a>, <a href="https://www.fields.utoronto.ca/programs/cim/11-12/insurancemath/" style="color:#505050;">University of Toronto (2012)</a> and Université du Québec à Montréal (2010).
-    </span>
+    </div>
 
     <h3>Keynote speakers</h3>
     <nav id="menu">
@@ -71,12 +70,47 @@
         </tr>
     </table>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            fetch('banner.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('banner-placeholder').innerHTML = data;
+    document.addEventListener('DOMContentLoaded', function() {
+        fetch('banner.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('banner-placeholder').innerHTML = data;
+
+                // --- UPDATED ACTIVE LINK LOGIC ---
+
+                // 1. Get the current path (e.g. "/program/index.html" or "/program/")
+                let path = window.location.pathname;
+
+                // 2. Remove "index.html" if it's there
+                if (path.endsWith("index.html")) {
+                    path = path.substring(0, path.length - "index.html".length);
+                }
+
+                // 3. Remove trailing slash "/" so we get a clean word
+                if (path.endsWith("/")) {
+                    path = path.substring(0, path.length - 1);
+                }
+
+                // 4. Get the folder name (the last part of the path)
+                let activePage = path.split("/").pop();
+
+                // 5. Handle the Home Page (root folder usually results in empty string)
+                if (activePage === "") {
+                    activePage = ".";
+                }
+
+                // 6. Loop and Match
+                const navLinks = document.querySelectorAll('.nav-container a');
+                
+                navLinks.forEach(link => {
+                    let linkHref = link.getAttribute('href');
+                    
+                    // Compare the folder name we found to the link href
+                    if (linkHref === activePage) {
+                        link.classList.add('current');
+                    }
                 });
+            });
         });
     </script>
 </body>

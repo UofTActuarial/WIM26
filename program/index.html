@@ -19,7 +19,7 @@
 
     <div id="banner-placeholder"></div>
 
-    <h2>Conference Program</h2>
+    <h2>Workshop Program</h2>
 
     <!--
     <table>
@@ -298,16 +298,53 @@
         </tr>
     </table>
 -->
-
-    More to come...
+    <span>
+        More to come...
+    </span>
+    
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            fetch('banner-short.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('banner-placeholder').innerHTML = data;
+    document.addEventListener('DOMContentLoaded', function() {
+        fetch('banner-short.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('banner-placeholder').innerHTML = data;
+
+                // --- UPDATED ACTIVE LINK LOGIC ---
+
+                // 1. Get the current path (e.g. "/program/index.html" or "/program/")
+                let path = window.location.pathname;
+
+                // 2. Remove "index.html" if it's there
+                if (path.endsWith("index.html")) {
+                    path = path.substring(0, path.length - "index.html".length);
+                }
+
+                // 3. Remove trailing slash "/" so we get a clean word
+                if (path.endsWith("/")) {
+                    path = path.substring(0, path.length - 1);
+                }
+
+                // 4. Get the folder name (the last part of the path)
+                let activePage = path.split("/").pop();
+
+                // 5. Handle the Home Page (root folder usually results in empty string)
+                if (activePage === "") {
+                    activePage = ".";
+                }
+
+                // 6. Loop and Match
+                const navLinks = document.querySelectorAll('.nav-container a');
+                
+                navLinks.forEach(link => {
+                    let linkHref = link.getAttribute('href');
+                    
+                    // Compare the folder name we found to the link href
+                    if (linkHref === activePage) {
+                        link.classList.add('current');
+                    }
                 });
+            });
         });
     </script>
 
