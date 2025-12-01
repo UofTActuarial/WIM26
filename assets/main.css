@@ -225,6 +225,7 @@ footer{font-size:0.875em; margin-top:12em; text-align:center;}
     span{padding-left:15px; padding-right:15px;}
     nav{padding-left:15px; padding-right:15px;}
     div{padding-left:15px; padding-right:15px;}
+    .main-intro {padding-left:15px; padding-right:15px;}
 }
 
 /* lists */
