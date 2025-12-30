@@ -177,6 +177,38 @@ table.sponsors{width:800px;}
 td.sponsor{white-space:nowrap; width:33%; text-align:center; vertical-align:middle; padding:0px 0px 0px 0px;}
 td.sponsor img{width: 100%}
 
+/* Container Setup */
+/* Container Layout */
+.sponsor-logos {
+    display: flex;
+    justify-content: space-between; /* Spreads them out */
+    align-items: center;            /* Centers them vertically */
+    gap: 10px;
+}
+
+/* Base rule for all images */
+.sponsor-logos img {
+    width: auto;         /* Maintains aspect ratio */
+    object-fit: contain; /* Prevents distortion */
+}
+
+/* --- MANUAL CONTROLS --- */
+
+/* 1. FAS Logo (First Image) */
+.sponsor-logos img:nth-child(1) {
+    height: 60px; /* Adjust this number to resize only the FAS logo */
+}
+
+/* 2. Stat Sci Logo (Second Image) */
+.sponsor-logos img:nth-child(2) {
+    height: 90px; /* Adjust this number to resize only the Stat Sci logo */
+}
+
+/* 3. RISC Logo (Third Image) */
+.sponsor-logos img:nth-child(3) {
+    height: 120px; /* Adjust this number to resize only the RISC logo */
+}
+
 /* The Table on the Program Page */
 td.room{padding: 4px 12px 4px 4px; width: 90%; vertical-align:bottom; font-size:1.67em; color: #52739e; height:32px;}
 td.date{white-space:nowrap; width:130px; text-align:right; vertical-align:top; padding:4px 16px 0px 0px;}
