@@ -178,6 +178,16 @@ td.sponsor{white-space:nowrap; width:33%; text-align:center; vertical-align:midd
 td.sponsor img{width: 100%}
 
 /* Container Setup */
+.sponsor-section {
+    width: 800px;       /* Your fixed container width */
+    margin: 0 auto;     /* Centers the block on the page */
+    text-align: center;
+}
+
+.sponsor-text {
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
 /* Container Layout */
 .sponsor-logos {
     display: flex;
@@ -201,12 +211,12 @@ td.sponsor img{width: 100%}
 
 /* 2. Stat Sci Logo (Second Image) */
 .sponsor-logos img:nth-child(2) {
-    height: 90px; /* Adjust this number to resize only the Stat Sci logo */
+    height: 88px; /* Adjust this number to resize only the Stat Sci logo */
 }
 
 /* 3. RISC Logo (Third Image) */
 .sponsor-logos img:nth-child(3) {
-    height: 120px; /* Adjust this number to resize only the RISC logo */
+    height: 125px; /* Adjust this number to resize only the RISC logo */
 }
 
 /* The Table on the Program Page */
