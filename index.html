@@ -15,7 +15,7 @@
 
 <body>
 
-    <div id="banner-placeholder"></div>
+    <div id="site-header-placeholder"></div>
     
     <div class="main-intro">
     This biennial workshop is the key venue for researchers and scholars in actuarial science and insurance from Ontario and Quebec to come together and discuss and exchange the latest developments in the field. The workshop features talks and a poster session on topic related to actuarial science and its application, as well as the intersection of actuarial science with e.g., statistics, probability, risk management, machine learning, and economics.
@@ -78,7 +78,7 @@
         fetch('banner.html')
             .then(response => response.text())
             .then(data => {
-                document.getElementById('banner-placeholder').innerHTML = data;
+                document.getElementById('site-header-placeholder').innerHTML = data;
 
                 // ---------------------------------------------------------
                 // ROBUST ACTIVE LINK LOGIC (Works Locally & Online)

@@ -17,7 +17,7 @@
 
 <body>
 
-    <div id="banner-placeholder"></div>
+    <div id="site-header-placeholder"></div>
 
     <h2>Workshop Program</h2>
     <h3>Thursday</h3>
@@ -400,7 +400,7 @@
         fetch('banner-short.html')
             .then(response => response.text())
             .then(data => {
-                document.getElementById('banner-placeholder').innerHTML = data;
+                document.getElementById('site-header-placeholder').innerHTML = data;
 
                 // --- UPDATED ACTIVE LINK LOGIC ---
 
